@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Crea tu nueva nota</title>
+</head>
+
+<body>
+	<h1>Crea una nueva nota para tu agenda</h1>
+	<form method="post" th:object="${nota}" th:action="@{/index}">
+		<label>Titulo</label><input th:field="*{titulo}" type="text" name="titulo" required><br>
+		<label>Contenido</label><textarea th:field="*{contenido}" name="contenido" required></textarea><br>
+		<label>Fecha</label><input th:field="*{fecha}" type="date" name="fecha" required><br>
+		<input type="submit" value="Crear">
+	</form>
+	<br>
+	<form action="/index">
+		<input type="submit" value="Cancelar">
+	</form>
+</body>
+
+</html>

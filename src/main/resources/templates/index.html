@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Crea tu agenda</title>
+</head>
+
+<body>
+	<h1 th:if="${fecha!=null}">Última sesion iniciada: <span th:text="${fecha}"></span></h1>
+	<h3>Aquí van tus notas</h3>
+	<table th:if="${notas!=null}" border="1">
+		<tr>
+			<th>Titulo</th>
+			<th>Contenido</th>
+			<th>Fecha</th>
+		</tr>
+		<tr th:each="nota:${notas}">
+			<td th:text="${nota.titulo}"></td>
+			<td th:text="${nota.contenido}"></td>
+			<td th:text="${nota.fecha}"></td>
+		</tr>
+	</table>
+	<a href="new">Crear nota para tu agenda</a>
+	
+	
+
+</body>
+
+</html>
